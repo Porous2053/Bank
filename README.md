@@ -2,9 +2,43 @@ Banking Backend Design Overview
 1. Requirements Gathering:
 
     Functional Requirements:
-        Account management, transfers, deposits, withdrawals, loan applications, etc.
-    Non-Functional Requirements:
-        Scalability, performance, security.
+        Account Management:
+        
+            Account Creation: Ability for users to create a new bank account with necessary details.
+            Account Closure: Allow users to close an account after necessary verifications.
+            Account Update: Ability for users to update personal details linked to the account.
+            View Balance: Users can check the current balance of their accounts.
+            View Statement: Users can retrieve and view their account statement for a specified period.
+        
+        Transaction Management:
+        
+            Funds Transfer:
+                Intra-Bank: Allow users to transfer funds to accounts within the same bank.
+                Inter-Bank: Enable users to transfer funds to accounts in other banks.
+            Deposits: Users can deposit money into their accounts.
+            Withdrawals: Users can withdraw money from their accounts.
+            Scheduled Transactions: Ability for users to schedule future transactions.
+        
+        Loan Services:
+        
+            Loan Application: Users can apply for various types of loans, providing necessary details and documents.
+            Loan Approval/Rejection: Backend processes to evaluate and decide on loan applications.
+            Loan Repayment: Users can repay loan amounts, either as lump-sum payments or in installments.
+            View Loan Statement: Users can view details of their loans, interest rates, due dates, etc.
+        
+        Notifications & Alerts:
+        
+            Transaction Alerts: Notify users of successful or failed transactions.
+            Account Activity Alerts: Notify users of suspicious activities or other account-related updates.
+            Loan Reminders: Send reminders to users about upcoming loan repayment due dates.
+        
+        Customer Support:
+        
+            Raise Tickets: Users can raise support tickets for issues or queries.
+            View Ticket Status: Users can check the current status of their support tickets.
+            Chat Support: Users can interact with customer support via chat.
+            Non-Functional Requirements:
+                Scalability, performance, security.
 
 2. High-Level Architecture:
 
