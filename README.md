@@ -141,3 +141,75 @@
 - **Logging and Monitoring:** Centralized logging and monitoring systems to track activities across services
 - **Scaling & Load Balancing:** Infrastructure provisions to scale services based on demand and distribute traffic
 
+# Data Management for Banking Backend
+
+## Database Selection:
+
+### 1. Relational Databases (RDBMS):
+- **Examples:** PostgreSQL, MySQL, Oracle, MS SQL Server
+- **Usage:**
+  - Storing transactional data
+  - Managing accounts, customer profiles, and loans
+  - Handling structured data with relations
+
+### 2. NoSQL Databases:
+- **Examples:** MongoDB, Cassandra, DynamoDB, Couchbase
+- **Usage:**
+  - Logging and audit trails
+  - Handling semi-structured or unstructured data
+  - Storing data with high write rates or scalability needs (e.g., notifications, real-time analytics)
+
+## Data Encryption:
+
+### 1. Data at Rest:
+- **Tools:** AWS KMS, HashiCorp Vault, Transparent Data Encryption (TDE) in RDBMS
+- **Purpose:**
+  - Encrypt data stored in databases, backups, logs
+  - Ensure protection against unauthorized data access
+
+### 2. Data in Transit:
+- **Protocols:** TLS, HTTPS
+- **Purpose:**
+  - Secure data being transmitted between services, databases, or external systems
+  - Ensure data integrity and confidentiality during transit
+
+## Database Backups:
+
+### 1. Backup Strategies:
+- **Full Backups:** Regular snapshots of the entire database
+- **Incremental Backups:** Store changes since the last full or incremental backup
+- **Differential Backups:** Store changes since the last full backup
+
+### 2. Backup Storage:
+- **Local Backups:** Stored within the same infrastructure or data center
+- **Off-Site Backups:** Stored in a different geographical location to ensure data safety against localized incidents
+
+### 3. Backup Scheduling:
+- Determine frequency based on:
+  - Business requirements
+  - Data volume and change rate
+  - Recovery Point Objective (RPO)
+
+### 4. Restoration:
+- **Test Regularly:** Ensure backup integrity and restoration process
+- **Recovery Time Objective (RTO):** Measure the maximum acceptable time to restore from backup
+
+## Data Redundancy & Replication:
+
+### 1. Master-Slave Replication:
+- **Purpose:** Distribute read queries, ensure high availability, create backup nodes
+- **Implementation:** Primary database (master) replicates data to one or more secondary databases (slaves)
+
+### 2. Multi-Master Replication:
+- **Purpose:** Allow data writes in multiple locations, especially in distributed systems
+- **Considerations:** Handle conflicts and ensure data consistency
+
+## Data Archiving:
+
+### 1. Strategy:
+- Move older, less frequently accessed data to cheaper storage solutions
+- Ensure the data remains accessible for regulatory or business needs
+
+### 2. Tools:
+- Solutions like AWS Glacier, Azure Blob Storage (cool tier), or dedicated archiving systems
+
